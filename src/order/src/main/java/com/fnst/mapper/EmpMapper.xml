@@ -1,0 +1,10 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fnst.mapper.EmpMapper">
+
+    <select id="login" resultType="com.fnst.pojo.Emp">
+        SELECT * FROM user where number=#{number} and password=#{password} and status=1
+    </select>
+
+</mapper>
