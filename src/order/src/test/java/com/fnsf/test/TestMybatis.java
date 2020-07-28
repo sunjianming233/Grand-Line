@@ -19,8 +19,8 @@ public class TestMybatis {
 	@Test
     public void testLogin(){
         Emp emp=new Emp();
-        emp.setNumber(111041);
-        emp.setPassword("1234");
+        emp.setNumber(123);
+        emp.setPassword("123");
         Emp emp1 = empMapper.login(emp);
         System.out.println(emp1);
     }

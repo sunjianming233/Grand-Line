@@ -28,18 +28,24 @@
         function emplogin() {
             var number=$("[name='number']").val();
             var password=$("[name='password']").val();
+          
        
              $.getJSON("/order/api/emp_login",{"number":number,
              	"password":password},function (result) {
                 //alert(JSON.stringify(result)); // JSON字符串
-                if(result.status==200){
+                if(result.statusCode==200){
                     //location.href="index.jsp";//跳转首页
-                    location.href="www.baidu.com";//跳转首页        
-                    console.log(result);
+                    //location.href="www.baidu.com";//跳转首页     
+                   
+                    //location.href="/toIndex";//跳转首页
+                    location.href="/page_index";//跳转首页
+                    //return false;
+
                 }else{
                     alert(result.message); //失败的提示信息
-                    window.location.reload();//失败后自动刷新账号信息输入框
+                    window.location.reload();//刷新
                 }
+                
             }); 
         } 
 </script>

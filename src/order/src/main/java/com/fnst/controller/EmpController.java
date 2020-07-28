@@ -39,8 +39,9 @@ public class EmpController {
 				// 登录成功去重定向首页
 				//response.sendRedirect("index.jsp");
 				//存session
-				// session.setAttribute("loginEmp", loginEmp);
+				 session.setAttribute("loginEmp", loginEmp);
 				//赋值ResultMessage中的statusCode状态码以及信息
+				
 				message=new ResultMessage(200,"登录成功");
 			} else {
 				// response.getWriter().write("<script>alert('账号已经被禁用，请联系管理员!');location.href='login.jsp';</script>");
