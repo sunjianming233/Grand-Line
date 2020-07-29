@@ -7,7 +7,6 @@
           content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>滴答办公系统-主页</title>
     <link rel="stylesheet" href="media/layui/css/layui.css" media="all">
-    <!-- <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css"> -->
     <link rel="stylesheet" href="media/css/app.css" media="all">
     <link rel="stylesheet" href="media/css/font-awesome.min.css">
     <style type="text/css">
@@ -50,7 +49,7 @@
             <li class="layui-nav-item">
                 <a href="javascript:;">
                     <img src="media/images/qf_logo.png" class="layui-nav-img">
-                    ${sessionScope.loginEmp.name}
+                    ${sessionScope.loginEmp.userName}
                 </a>
                 <dl class="layui-nav-child">
                     <dd><a href="javascript:showTab(1001,'userInfo.html','我的信息');">我的信息</a></dd>

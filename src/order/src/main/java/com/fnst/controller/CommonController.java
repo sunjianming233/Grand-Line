@@ -38,9 +38,15 @@ public class CommonController {
      * @param page
      * @return
      */
-    @RequestMapping("/page_{XXX}")
+  /*  @RequestMapping("/page_{XXX}")
     public String toPage(@PathVariable("XXX") String page){
         return page;  //  前缀 + page + 后缀  【配置视图解析器】
+    }*/
+	
+	  
+    @RequestMapping("/index")
+    public String toIndex(){
+        return "/WEB-INF/jsp/index.jsp";
     }
 
 }

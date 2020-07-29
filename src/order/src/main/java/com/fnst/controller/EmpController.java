@@ -21,7 +21,7 @@ import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
 * @date 2020年7月25日 
 */
 @Controller
-@RequestMapping("/api")
+
 public class EmpController {
 
 	@Autowired
@@ -41,7 +41,6 @@ public class EmpController {
 				//存session
 				 session.setAttribute("loginEmp", loginEmp);
 				//赋值ResultMessage中的statusCode状态码以及信息
-				
 				message=new ResultMessage(200,"登录成功");
 			} else {
 				// response.getWriter().write("<script>alert('账号已经被禁用，请联系管理员!');location.href='login.jsp';</script>");
