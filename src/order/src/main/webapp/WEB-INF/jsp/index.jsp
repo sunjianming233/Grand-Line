@@ -68,9 +68,9 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;" id="1"><i class="layui-icon layui-icon-app"></i>&nbsp;我的工具</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" id="2" onclick="showTab(1,'/page_clock','我的日历')">&nbsp;&nbsp;&nbsp;&nbsp;我的日历</a></dd>
-                        <dd><a href="javascript:;" id="2" onclick="showTab(2,'/page_weather','天气查询')">&nbsp;&nbsp;&nbsp;&nbsp;天气查询</a></dd>
-                        <dd><a href="javascript:;" id="2" onclick="showTab(3,'/page_map','地图查询')">&nbsp;&nbsp;&nbsp;&nbsp;地图查询</a></dd>
+                        <dd><a href="javascript:;" id="2" onclick="showTab(1,'page_clock','我的日历')">&nbsp;&nbsp;&nbsp;&nbsp;我的日历</a></dd>
+                        <dd><a href="javascript:;" id="2" onclick="showTab(2,'page_weather','天气查询')">&nbsp;&nbsp;&nbsp;&nbsp;天气查询</a></dd>
+                        <dd><a href="javascript:;" id="2" onclick="showTab(3,'page_map','地图查询')">&nbsp;&nbsp;&nbsp;&nbsp;地图查询</a></dd>
                     </dl>
                 </li>
 
@@ -78,8 +78,8 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;" id="1"><i class="fa fa-sitemap"></i>&nbsp;部门管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" id="2" onclick="showTab(1,'departlist.html','部门列表')">&nbsp;&nbsp;&nbsp;&nbsp;部门列表</a></dd>
-                        <dd><a href="javascript:;" id="2" onclick="showTab(1,'/page_departadd','部门新增')">&nbsp;&nbsp;&nbsp;&nbsp;部门新增</a></dd>
+                        <dd><a href="javascript:;" id="2" onclick="showTab(1,'/depart_list/1/5','部门列表')">&nbsp;&nbsp;&nbsp;&nbsp;部门列表</a></dd>
+                        <dd><a href="javascript:;" id="2" onclick="showTab(1,'page_departadd','部门新增')">&nbsp;&nbsp;&nbsp;&nbsp;部门新增</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
@@ -142,7 +142,7 @@
         base: 'media/layui/lay/modules/'
     }).use(['element','app'], function(){
         element = layui.element;
-        showTab(20000,"/page_main","首页");
+        showTab(20000,"page_main","首页");
     });
     var tid=-1;
     function showTab(id,u,n) {

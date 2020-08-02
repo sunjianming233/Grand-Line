@@ -1,0 +1,14 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fnst.mapper.LoginlogMapper">
+
+    <insert id="addLoginLog">
+        INSERT  into loginlog VALUES (null,#{ip},#{number},now(),#{location})
+    </insert>
+
+    <select id="getLatestLog" resultType="com.fnst.pojo.Loginlog">
+        SELECT * FROM loginlog where number=#{number} ORDER BY createtime desc limit 0,10
+    </select>
+
+</mapper>

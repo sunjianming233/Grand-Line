@@ -21,33 +21,52 @@
 
 <!--使用了JQuery，需要导入JS-->
 <script type="text/javascript" src="media/js/jquery.min.js"></script>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
 
-<script type="application/javascript">
-	
-        //登录
-        function emplogin() {
-            var number=$("[name='number']").val();
-            var password=$("[name='password']").val();          
-       
-             $.getJSON("/order/emp_login",{"number":number,
-             	"password":password},function (result) {
-                //alert(JSON.stringify(result)); // JSON字符串
-                if(result.statusCode==200){
-                    //location.href="index.jsp";//跳转首页
-                    //location.href="www.baidu.com";//跳转首页     
-                   
-                    //location.href="/toIndex";//跳转首页
-                    location.href="/index";//跳转首页
-                    alert(result.message); //成功的提示信息
-                    //return false;
+<script type="text/javascript">
+	var ip = "";
+	var cityAndAddress = "";
+	//页面加载的时候自动执行
+	$(function() {
+		//获取IP
+		ip = returnCitySN["cip"];
+		$.ajax({
+					url : 'http://api.map.baidu.com/location/ip?ak=ia6HfFL660Bvh43exmH9LrI6',
+					type : 'POST',
+					dataType : 'jsonp',
+					success : function(data) {
+						//获取城市
+						cityAndAddress = data.content.address_detail.province
+								+ "," + data.content.address_detail.city;
+					}
+				});
+	})
 
-                }else{
-                    alert(result.message); //失败的提示信息
-                    window.location.reload();//刷新
-                }
-                
-            }); 
-        } 
+	//登录
+	function emplogin() {
+		var number = $("[name='number']").val();
+		var password = $("[name='password']").val();
+
+		$.post("/emp_login", {
+			"number" : number,
+			"password" : password,
+			"ip":ip,
+			"cityAndAddress":cityAndAddress
+		}, function(result) {
+			//alert(JSON.stringify(result)); // JSON字符串
+			if (result.statusCode == 200) {
+
+				location.href = "page_index";//跳转首页
+				alert(result.message); //成功的提示信息
+				//return false;
+
+			} else {
+				alert(result.message); //失败的提示信息
+				window.location.reload();//刷新
+			}
+
+		},"json");
+	}
 </script>
 
 </head>

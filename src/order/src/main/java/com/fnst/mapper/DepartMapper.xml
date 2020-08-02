@@ -1,0 +1,18 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fnst.mapper.DepartMapper">
+
+    <insert id="addDepart">
+        INSERT  into depart VALUES (null,#{departName},now(),0)
+    </insert>
+
+    <select id="getTotalCount" resultType="int">
+        SELECT count(id) FROM depart where del=0
+    </select>
+
+    <select id="getDeparts" resultType="com.fnst.pojo.Depart"> 
+        SELECT * FROM depart where del=0  limit #{pageStart},#{pageSize} 
+    </select>
+   
+</mapper>
